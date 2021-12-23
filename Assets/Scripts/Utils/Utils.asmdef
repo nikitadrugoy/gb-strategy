@@ -1,0 +1,6 @@
+﻿{
+  "name": "Utils",
+  "references": [
+    "Abstractions.Serialization"
+  ]
+}

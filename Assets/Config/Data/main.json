@@ -1,0 +1,8 @@
+﻿{
+  "buildings": [
+    {
+      "id": "incubator",
+      "health": 100
+    }
+  ]
+}

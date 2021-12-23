@@ -1,0 +1,22 @@
+{
+    "name": "Initialization",
+    "rootNamespace": "",
+    "references": [
+        "Config",
+        "Utils",
+        "Core",
+        "UserControl",
+        "Abstractions.Serialization",
+        "Abstractions.GameLoop",
+        "Abstractions.UserControl"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
