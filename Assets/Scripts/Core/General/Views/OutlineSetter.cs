@@ -32,8 +32,6 @@ namespace Core.General.Views
             }
 
             _isSelected = true;
-            
-            Debug.Log(_isSelected);
         }
 
         public void Unselect()
@@ -60,8 +58,6 @@ namespace Core.General.Views
             }
 
             _isSelected = false;
-            
-            Debug.Log(_isSelected);
         }
     }
 }
