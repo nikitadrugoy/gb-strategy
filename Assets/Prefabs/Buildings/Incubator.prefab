@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a543c4443fda4c9ab86a1594002a1a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outlineMaterial: {fileID: 2100000, guid: a9bec445b198dd7458fcd489957a26b0, type: 2}
+  _outlineMaterial: {fileID: 2100000, guid: 62b2fa70e237a2d48913d3bf8cbe1964, type: 2}
 --- !u!1001 &8717388775800471353
 PrefabInstance:
   m_ObjectHideFlags: 0

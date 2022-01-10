@@ -6,9 +6,9 @@
         "Utils",
         "Core",
         "UserControl",
-        "Abstractions.Serialization",
-        "Abstractions.GameLoop",
-        "Abstractions.UserControl"
+        "Serialization.Abstractions",
+        "GameLoop.Abstractions",
+        "UserControl.Abstractions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

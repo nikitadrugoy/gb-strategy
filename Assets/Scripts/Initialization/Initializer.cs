@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using Abstractions.GameLoop;
 using Config;
 using Config.Assets;
 using Config.Map;
 using Config.Data;
-using Core.Buildings.Presenters;
+using GameLoop.Abstractions;
 using UnityEngine;
 using UserControl;
 using Utils.Serialization;

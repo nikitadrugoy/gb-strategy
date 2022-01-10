@@ -2,7 +2,7 @@
     "name": "Config",
     "rootNamespace": "",
     "references": [
-        "Abstractions.Serialization"
+        "Serialization.Abstractions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

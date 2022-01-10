@@ -1,5 +1,5 @@
 ﻿using System;
-using Abstractions.Core;
+using Core.Abstractions;
 using Core.General.Views;
 using UnityEngine;
 

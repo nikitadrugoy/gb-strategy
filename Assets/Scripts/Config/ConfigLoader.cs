@@ -1,7 +1,7 @@
-﻿using Abstractions.Serialization;
-using Config.Assets;
+﻿using Config.Assets;
 using Config.Data;
 using Config.Map;
+using Utils.Serialization.Abstractions;
 
 namespace Config
 {

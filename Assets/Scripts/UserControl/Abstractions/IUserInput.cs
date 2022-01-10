@@ -1,4 +1,4 @@
-﻿namespace Abstractions.UserControl
+﻿namespace UserControl.Abstractions
 {
     public interface IUserInput
     {

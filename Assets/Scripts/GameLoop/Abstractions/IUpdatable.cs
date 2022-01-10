@@ -1,4 +1,4 @@
-﻿namespace Abstractions.GameLoop
+﻿namespace GameLoop.Abstractions
 {
     public interface IUpdatable
     {

@@ -1,8 +1,8 @@
 ﻿{
   "name": "UserControl",
   "references": [
-    "Abstractions.UserControl",
-    "Abstractions.GameLoop",
-    "Abstractions.Core"
+    "UserControl.Abstractions",
+    "GameLoop.Abstractions",
+    "Core.Abstractions"
   ]
 }

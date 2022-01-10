@@ -1,4 +1,4 @@
-﻿namespace Abstractions.Serialization
+﻿namespace Utils.Serialization.Abstractions
 {
     public interface IDeserializer
     {

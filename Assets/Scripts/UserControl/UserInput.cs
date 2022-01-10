@@ -1,7 +1,7 @@
-﻿using Abstractions.Core;
-using Abstractions.GameLoop;
-using Abstractions.UserControl;
+﻿using Core.Abstractions;
+using GameLoop.Abstractions;
 using UnityEngine;
+using UserControl.Abstractions;
 
 namespace UserControl
 {

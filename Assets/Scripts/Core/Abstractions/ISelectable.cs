@@ -1,4 +1,4 @@
-﻿namespace Abstractions.Core
+﻿namespace Core.Abstractions
 {
     public interface ISelectable
     {

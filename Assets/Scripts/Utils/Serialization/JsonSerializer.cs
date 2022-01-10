@@ -1,5 +1,5 @@
-﻿using Abstractions.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Utils.Serialization.Abstractions;
 
 namespace Utils.Serialization
 {
