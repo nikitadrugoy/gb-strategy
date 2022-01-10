@@ -24,7 +24,7 @@ namespace Core.General.Views
 
             foreach (Renderer currentRenderer in _renderers)
             {
-                List<Material> materials = currentRenderer.materials.ToList();
+                List<Material> materials = currentRenderer.sharedMaterials.ToList();
                 
                 materials.Add(_outlineMaterial);
 
@@ -43,10 +43,19 @@ namespace Core.General.Views
             
             foreach (Renderer currentRenderer in _renderers)
             {
-                List<Material> materials = currentRenderer.materials.ToList();
-                
-                materials.RemoveAt(materials.Count - 1);
+                List<Material> materials = currentRenderer.sharedMaterials.ToList();
 
+                for (var i = 0; i < materials.Count; i++)
+                {
+                    Material currentMaterial = materials[i];
+
+                    if (currentMaterial == _outlineMaterial)
+                    {
+                        materials.RemoveAt(i);
+                        break;
+                    }
+                }
+                
                 currentRenderer.materials = materials.ToArray();
             }
 
