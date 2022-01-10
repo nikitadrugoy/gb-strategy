@@ -5,6 +5,9 @@ using Core.Buildings.Models;
 using Core.Buildings.Presenters;
 using Core.Buildings.Views;
 using Core.General.Models;
+using Core.Units.Models;
+using Core.Units.Presenters;
+using Core.Units.Views;
 using UnityEngine;
 
 namespace Initialization
@@ -14,19 +17,27 @@ namespace Initialization
         private readonly MainConfig _mainConfig;
         private readonly MapConfig _mapConfig;
         private readonly Transform _buildingRoot;
+        private readonly Transform _unitRoot;
 
-        private List<BuildingPresenter> _buildings = new List<BuildingPresenter>();
+        private List<BuildingPresenter> _buildings;
+        private List<UnitPresenter> _units;
 
-        public MapLoader(MainConfig mainConfig, MapConfig mapConfig, Transform buildingRoot)
+        public MapLoader(MainConfig mainConfig, MapConfig mapConfig, Transform buildingRoot, Transform unitRoot)
         {
             _mainConfig = mainConfig;
             _mapConfig = mapConfig;
             _buildingRoot = buildingRoot;
+            _unitRoot = unitRoot;
+
+            _buildings = new List<BuildingPresenter>(_mapConfig.Buildings.Count);
+            _units = new List<UnitPresenter>(_mapConfig.Units.Count);
         }
 
         public void Load()
         {
+            // TODO refactor to generic types and one useful method for different objects (no duplicate)
             LoadBuildings();
+            LoadUnits();
         }
 
         private void LoadBuildings()
@@ -40,7 +51,7 @@ namespace Initialization
 
                 // TODO move to the factory
                 Transform buildingGameObject = Object.Instantiate(
-                    buildingConfig.AssetConfig.Prefab,
+                    buildingConfig.AssetConfigItem.Prefab,
                     _buildingRoot
                 );
 
@@ -50,6 +61,30 @@ namespace Initialization
                 var presenter = new BuildingPresenter(building, buildingView);
                 
                 _buildings.Add(presenter);
+            }
+        }
+
+        private void LoadUnits()
+        {
+            foreach (MapUnitData mapUnitData in _mapConfig.Units)
+            {
+                UnitData unitConfig = _mainConfig.Units[mapUnitData.Id];
+
+                var health = new Health(unitConfig.Health);
+                var unit = new Unit(health);
+
+                // TODO move to the factory
+                Transform unitGameObject = Object.Instantiate(
+                    unitConfig.AssetConfigItem.Prefab,
+                    _unitRoot
+                );
+
+                unitGameObject.position = mapUnitData.Position;
+
+                var unitView = unitGameObject.GetComponent<UnitView>();
+                var presenter = new UnitPresenter(unit, unitView);
+                
+                _units.Add(presenter);
             }
         }
     }

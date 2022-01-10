@@ -2,10 +2,32 @@
   "buildings": [
     {
       "id": "incubator",
+      "player": 0,
       "position": {
         "x": 5,
         "y": 0,
         "z": 5
+      }
+    },
+    {
+      "id": "incubator",
+      "player": 1,
+      "position": {
+        "x": -10,
+        "y": 0,
+        "z": 5
+      }
+    }
+  ],
+  
+  "units": [
+    {
+      "id": "spitter",
+      "player": 0,
+      "position": {
+        "x": 5,
+        "y": 0,
+        "z": 10
       }
     }
   ]

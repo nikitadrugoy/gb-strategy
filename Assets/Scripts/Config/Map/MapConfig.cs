@@ -8,7 +8,9 @@ namespace Config.Map
     public class MapConfig
     {
         [JsonProperty("buildings")] private MapBuildingData[] _buildings;
+        [JsonProperty("units")] private MapUnitData[] _units;
 
         public IReadOnlyCollection<MapBuildingData> Buildings => _buildings;
+        public IReadOnlyCollection<MapUnitData> Units => _units;
     }
 }

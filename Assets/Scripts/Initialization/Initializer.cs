@@ -14,7 +14,8 @@ namespace Initialization
     {
         private List<IUpdatable> _updatableObjects = new List<IUpdatable>();
 
-        public void Init(AssetConfig assetConfig, string mainConfigJson, string mapConfigJson, Transform buildingRoot)
+        public void Init(AssetConfig assetConfig, string mainConfigJson, string mapConfigJson, Transform buildingRoot,
+            Transform unitRoot)
         {
             var deserializer = new JsonSerializer();
             var configLoader = new ConfigLoader(deserializer);
@@ -22,7 +23,7 @@ namespace Initialization
             MainConfig mainConfig = configLoader.LoadMainConfig(assetConfig, mainConfigJson);
             MapConfig mapConfig = configLoader.LoadMapConfig(mapConfigJson);
 
-            LoadMap(mainConfig, mapConfig, buildingRoot);
+            LoadMap(mainConfig, mapConfig, buildingRoot, unitRoot);
             InitUserControl();
         }
 
@@ -35,16 +36,17 @@ namespace Initialization
             }
         }
 
-        private void LoadMap(MainConfig mainConfig, MapConfig mapConfig, Transform buildingRoot)
+        private void LoadMap(MainConfig mainConfig, MapConfig mapConfig, Transform buildingRoot, Transform unitRoot)
         {
-            var mapLoader = new MapLoader(mainConfig, mapConfig, buildingRoot);
+            var mapLoader = new MapLoader(mainConfig, mapConfig, buildingRoot, unitRoot);
             
             mapLoader.Load();
         }
 
         private void InitUserControl()
         {
-            var userInput = new UserInput(Camera.main);
+            var selectedObject = new SelectedObject();
+            var userInput = new UserInput(Camera.main, selectedObject);
             
             _updatableObjects.Add(userInput);
         }

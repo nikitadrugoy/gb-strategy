@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Config.Data
 {
-    public class BuildingData
+    public class UnitData
     {
         [JsonProperty("id")] private string _id;
         [JsonProperty("health")] private int _health;

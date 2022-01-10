@@ -1,35 +1,9 @@
-﻿using System;
-using Core.Abstractions;
-using Core.General.Views;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Core.Buildings.Views
 {
-    [RequireComponent(typeof(OutlineSetter))]
-    public class BuildingView : MonoBehaviour, ISelectable
+    public class BuildingView : MonoBehaviour
     {
-        public event Action Selected;
-
-        private OutlineSetter _outlineSetter;
         
-        // TODO move to model?
-        private bool _isSelected;
-
-        private void Awake()
-        {
-            _outlineSetter = GetComponent<OutlineSetter>();
-        }
-
-        public void Select()
-        {
-            Selected?.Invoke();
-
-            if (_isSelected)
-                _outlineSetter.Select();
-            else
-                _outlineSetter.Unselect();
-
-            _isSelected = _isSelected == false;
-        }
     }
 }

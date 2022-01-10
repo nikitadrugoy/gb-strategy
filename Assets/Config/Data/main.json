@@ -2,6 +2,12 @@
   "buildings": [
     {
       "id": "incubator",
+      "health": 1000
+    }
+  ],
+  "units": [
+    {
+      "id": "spitter",
       "health": 100
     }
   ]

@@ -13,13 +13,14 @@ namespace Initialization.Views
         
         [Header("Roots")] 
         [SerializeField] private Transform _buildingRoot;
+        [SerializeField] private Transform _unitRoot;
 
         private Initializer _initializer;
 
         private void Awake()
         {
             _initializer = new Initializer();
-            _initializer.Init(_assetConfig, _mainConfigFile.text, _mapConfigFile.text, _buildingRoot);
+            _initializer.Init(_assetConfig, _mainConfigFile.text, _mapConfigFile.text, _buildingRoot, _unitRoot);
         }
 
         private void Update()

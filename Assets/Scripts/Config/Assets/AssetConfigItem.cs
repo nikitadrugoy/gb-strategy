@@ -2,8 +2,8 @@
 
 namespace Config.Assets
 {
-    [CreateAssetMenu(fileName = "BuildingAssetConfig", menuName = "Config/Building", order = 0)]
-    public class BuildingAssetConfig : ScriptableObject
+    [CreateAssetMenu(fileName = "AssetConfigItem", menuName = "Config/AssetConfigItem", order = 0)]
+    public class AssetConfigItem : ScriptableObject
     {
         [SerializeField] private string _id;
         [SerializeField] private Transform _prefab;
